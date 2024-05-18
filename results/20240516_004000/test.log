@@ -1,0 +1,65 @@
+2024-05-16 00:40:00,910 - INFO - Criterion: L1Loss()
+2024-05-16 00:41:26,139 - INFO - Reconstruction time for image 0-0: 84.865951 seconds
+2024-05-16 00:41:26,520 - INFO - SSIM for image 0: 0.882985
+2024-05-16 00:41:26,527 - INFO - PSNR for image 0: 27.610597
+2024-05-16 00:42:48,931 - INFO - Reconstruction time for image 0-1: 82.220138 seconds
+2024-05-16 00:42:49,309 - INFO - SSIM for image 0: 0.880482
+2024-05-16 00:42:49,316 - INFO - PSNR for image 0: 27.401570
+2024-05-16 00:44:13,574 - INFO - Reconstruction time for image 0-2: 84.097170 seconds
+2024-05-16 00:44:13,952 - INFO - SSIM for image 0: 0.889524
+2024-05-16 00:44:13,958 - INFO - PSNR for image 0: 27.587671
+2024-05-16 00:45:37,147 - INFO - Reconstruction time for image 0-3: 83.034748 seconds
+2024-05-16 00:45:37,526 - INFO - SSIM for image 0: 0.886958
+2024-05-16 00:45:37,533 - INFO - PSNR for image 0: 27.464099
+2024-05-16 00:46:59,066 - INFO - Reconstruction time for image 0-4: 81.376227 seconds
+2024-05-16 00:46:59,445 - INFO - SSIM for image 0: 0.891765
+2024-05-16 00:46:59,451 - INFO - PSNR for image 0: 27.610299
+2024-05-16 00:48:20,262 - INFO - Reconstruction time for image 0-5: 80.657331 seconds
+2024-05-16 00:48:20,641 - INFO - SSIM for image 0: 0.889419
+2024-05-16 00:48:20,647 - INFO - PSNR for image 0: 27.575216
+2024-05-16 00:49:41,800 - INFO - Reconstruction time for image 0-6: 80.989883 seconds
+2024-05-16 00:49:42,182 - INFO - SSIM for image 0: 0.892222
+2024-05-16 00:49:42,188 - INFO - PSNR for image 0: 27.785639
+2024-05-16 00:51:04,038 - INFO - Reconstruction time for image 0-7: 81.697305 seconds
+2024-05-16 00:51:04,416 - INFO - SSIM for image 0: 0.890233
+2024-05-16 00:51:04,422 - INFO - PSNR for image 0: 27.791034
+2024-05-16 00:52:27,018 - INFO - Reconstruction time for image 0-8: 82.441892 seconds
+2024-05-16 00:52:27,393 - INFO - SSIM for image 0: 0.893215
+2024-05-16 00:52:27,399 - INFO - PSNR for image 0: 27.937381
+2024-05-16 00:53:47,570 - INFO - Reconstruction time for image 0-9: 80.015742 seconds
+2024-05-16 00:53:47,954 - INFO - SSIM for image 0: 0.891639
+2024-05-16 00:53:47,961 - INFO - PSNR for image 0: 27.951568
+2024-05-16 00:55:06,306 - INFO - Reconstruction time for image 0-10: 78.196515 seconds
+2024-05-16 00:55:06,685 - INFO - SSIM for image 0: 0.894640
+2024-05-16 00:55:06,692 - INFO - PSNR for image 0: 28.096029
+2024-05-16 00:56:25,439 - INFO - Reconstruction time for image 0-11: 78.594440 seconds
+2024-05-16 00:56:25,814 - INFO - SSIM for image 0: 0.893487
+2024-05-16 00:56:25,819 - INFO - PSNR for image 0: 28.103437
+2024-05-16 00:57:41,116 - INFO - Reconstruction time for image 0-12: 75.126665 seconds
+2024-05-16 00:57:41,496 - INFO - SSIM for image 0: 0.896048
+2024-05-16 00:57:41,503 - INFO - PSNR for image 0: 28.255633
+2024-05-16 00:58:56,729 - INFO - Reconstruction time for image 0-13: 75.060613 seconds
+2024-05-16 00:58:57,104 - INFO - SSIM for image 0: 0.894343
+2024-05-16 00:58:57,111 - INFO - PSNR for image 0: 28.268851
+2024-05-16 01:00:11,781 - INFO - Reconstruction time for image 0-14: 74.505034 seconds
+2024-05-16 01:00:12,157 - INFO - SSIM for image 0: 0.897175
+2024-05-16 01:00:12,162 - INFO - PSNR for image 0: 28.433165
+2024-05-16 01:01:26,779 - INFO - Reconstruction time for image 0-15: 74.449631 seconds
+2024-05-16 01:01:27,154 - INFO - SSIM for image 0: 0.894764
+2024-05-16 01:01:27,160 - INFO - PSNR for image 0: 28.416254
+2024-05-16 01:02:42,031 - INFO - Reconstruction time for image 0-16: 74.701385 seconds
+2024-05-16 01:02:42,408 - INFO - SSIM for image 0: 0.896204
+2024-05-16 01:02:42,414 - INFO - PSNR for image 0: 28.520081
+2024-05-16 01:03:57,285 - INFO - Reconstruction time for image 0-17: 74.703479 seconds
+2024-05-16 01:03:57,661 - INFO - SSIM for image 0: 0.892109
+2024-05-16 01:03:57,666 - INFO - PSNR for image 0: 28.437766
+2024-05-16 01:05:12,744 - INFO - Reconstruction time for image 0-18: 74.916021 seconds
+2024-05-16 01:05:13,127 - INFO - SSIM for image 0: 0.895522
+2024-05-16 01:05:13,133 - INFO - PSNR for image 0: 28.614679
+2024-05-16 01:06:27,713 - INFO - Reconstruction time for image 0-19: 74.411805 seconds
+2024-05-16 01:06:28,088 - INFO - SSIM for image 0: 0.889043
+2024-05-16 01:06:28,094 - INFO - PSNR for image 0: 28.518917
+2024-05-16 01:07:42,671 - INFO - Reconstruction time for image 0-20: 74.409752 seconds
+2024-05-16 01:07:43,043 - INFO - SSIM for image 0: 0.891400
+2024-05-16 01:07:43,049 - INFO - PSNR for image 0: 28.789139
+2024-05-16 01:07:43,049 - INFO - Average Reconstruction Time per Image: 78.593892 seconds
