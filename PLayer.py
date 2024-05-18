@@ -89,40 +89,10 @@ def shift_back(inputs, step=2):
             inputs[:, i, :, int(step * i):int(step * i) + out_col]
     return inputs[:, :, :, :out_col]
 
-
-# class Illumination_Estimator(nn.Module):
-#     def __init__(
-#             self, n_fea_middle, n_fea_in=4, n_fea_out=3):  # __init__部分是内部属性，而forward的输入才是外部输入
-#         super(Illumination_Estimator, self).__init__()
-#
-#         self.conv1 = nn.Conv2d(n_fea_in, n_fea_middle, kernel_size=1, bias=True)
-#
-#         self.depth_conv = nn.Conv2d(
-#             n_fea_middle, n_fea_middle, kernel_size=5, padding=2, bias=True, groups=n_fea_in)
-#
-#         self.conv2 = nn.Conv2d(n_fea_middle, n_fea_out, kernel_size=1, bias=True)
-#
-#     def forward(self, img):
-#         # img:        b,c=3,h,w
-#         # mean_c:     b,c=1,h,w
-#
-#         # illu_fea:   b,c,h,w
-#         # illu_map:   b,c=3,h,w
-#
-#         mean_c = img.mean(dim=1).unsqueeze(1)
-#         # stx()
-#         input = torch.cat([img, mean_c], dim=1)
-#
-#         x_1 = self.conv1(input)
-#         illu_fea = self.depth_conv
-#         illu_map = self.conv2(illu_fea)
-#         return illu_fea, illu_map
-#         return illu_fea, illu_map
-# class Illumination_Estimator(nn.Module
-class Illumination_Estimator(nn.Module):
+class Featuring(nn.Module):
     def __init__(
             self, n_fea_middle, n_fea_in=4, n_fea_out=3):  # __init__部分是内部属性，而forward的输入才是外部输入
-        super(Illumination_Estimator, self).__init__()
+        super(Featuring, self).__init__()
 
         self.conv1 = nn.Conv2d(n_fea_in, n_fea_middle, kernel_size=1, bias=True)
 
@@ -314,10 +284,10 @@ class IGAB(nn.Module):
         return out
 
 
-class Denoiser(nn.Module):
+class Denoising(nn.Module):
     # Denoising model composed of an encoder-decoder architecture
     def __init__(self, in_dim=3, out_dim=3, dim=31, level=4, num_blocks=[2, 4, 4, 4, 4]):
-        super(Denoiser, self).__init__()
+        super(Denoising, self).__init__()
         self.dim = dim
         self.level = level
 
@@ -409,12 +379,12 @@ class Denoiser(nn.Module):
         return out
 
 
-class RetinexFormer_Single_Stage(nn.Module):
+class PLayer(nn.Module):
     def __init__(self, in_channels=3, out_channels=3, n_feat=31, level=2, num_blocks=[1, 1, 1]):
-        super(RetinexFormer_Single_Stage, self).__init__()
-        self.estimator = Illumination_Estimator(n_feat)
-        self.denoiser = Denoiser(in_dim=in_channels, out_dim=out_channels, dim=n_feat, level=level,
-                                 num_blocks=num_blocks)  #### 将 Denoiser 改为 img2img
+        super(PLayer, self).__init__()
+        self.estimator = Featuring(n_feat)
+        self.denoiser = Denoising(in_dim=in_channels, out_dim=out_channels, dim=n_feat, level=level,
+                                 num_blocks=num_blocks)
 
     # def _init_weights(self, m):
     #     if isinstance(m, nn.Conv2d):
@@ -441,29 +411,3 @@ class RetinexFormer_Single_Stage(nn.Module):
         output_img = self.denoiser(input_img, illu_fea)
 
         return output_img
-
-class RetinexFormer(nn.Module):
-    def __init__(self, in_channels=3, out_channels=3, n_feat=31, stage=3, num_blocks=[1,1,1]):
-        super(RetinexFormer, self).__init__()
-        self.stage = stage
-
-        modules_body = [RetinexFormer_Single_Stage(in_channels=in_channels, out_channels=out_channels, n_feat=n_feat, level=2, num_blocks=num_blocks)
-                        for _ in range(stage)]
-
-        self.body = nn.Sequential(*modules_body)
-    def _init_weights(self, m):
-        if isinstance(m, nn.Linear):
-            trunc_normal_(m.weight, std=.02)
-            if isinstance(m, nn.Linear) and m.bias is not None:
-                nn.init.constant_(m.bias, 0)
-        elif isinstance(m, nn.LayerNorm):
-            nn.init.constant_(m.bias, 0)
-            nn.init.constant_(m.weight, 1.0)
-    def forward(self, x):
-        """
-        x: [b,c,h,w]
-        return out:[b,c,h,w]
-        """
-        out = self.body(x)
-
-        return out   ################
